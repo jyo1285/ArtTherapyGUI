@@ -2,7 +2,7 @@ package util;
 
 public class Validator {
 
-    // EMPTY FIELD
+    // EMPTY CHECK
 
     public static boolean isEmpty(
             String text

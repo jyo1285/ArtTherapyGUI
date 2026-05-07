@@ -4,7 +4,8 @@ import dao.UserDAO;
 
 public class AuthService {
 
-    UserDAO dao = new UserDAO();
+    UserDAO dao =
+            new UserDAO();
 
     public boolean login(
             String username,

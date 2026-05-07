@@ -3,15 +3,10 @@ package model;
 public class Session {
 
     private int id;
-
     private int patientId;
-
     private int therapistId;
-
     private String sessionDate;
-
     private String sessionTime;
-
     private String status;
 
     public Session() {
@@ -36,10 +31,7 @@ public class Session {
         return id;
     }
 
-    public void setId(
-            int id
-    ) {
-
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -47,10 +39,7 @@ public class Session {
         return patientId;
     }
 
-    public void setPatientId(
-            int patientId
-    ) {
-
+    public void setPatientId(int patientId) {
         this.patientId = patientId;
     }
 
@@ -58,10 +47,7 @@ public class Session {
         return therapistId;
     }
 
-    public void setTherapistId(
-            int therapistId
-    ) {
-
+    public void setTherapistId(int therapistId) {
         this.therapistId = therapistId;
     }
 
@@ -69,10 +55,7 @@ public class Session {
         return sessionDate;
     }
 
-    public void setSessionDate(
-            String sessionDate
-    ) {
-
+    public void setSessionDate(String sessionDate) {
         this.sessionDate = sessionDate;
     }
 
@@ -80,10 +63,7 @@ public class Session {
         return sessionTime;
     }
 
-    public void setSessionTime(
-            String sessionTime
-    ) {
-
+    public void setSessionTime(String sessionTime) {
         this.sessionTime = sessionTime;
     }
 
@@ -91,10 +71,7 @@ public class Session {
         return status;
     }
 
-    public void setStatus(
-            String status
-    ) {
-
+    public void setStatus(String status) {
         this.status = status;
     }
 }

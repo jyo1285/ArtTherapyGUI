@@ -14,4 +14,9 @@ public class PatientService {
 
         return dao.addPatient(patient);
     }
+
+    public void viewPatients() {
+
+        dao.viewPatients();
+    }
 }

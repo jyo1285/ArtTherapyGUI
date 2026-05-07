@@ -58,7 +58,6 @@ public class Patient {
     public void setGender(String gender) {
         this.gender = gender;
     }
-
     public String getContact() {
         return contact;
     }
@@ -74,4 +73,5 @@ public class Patient {
     public void setDiagnosis(String diagnosis) {
         this.diagnosis = diagnosis;
     }
+
 }

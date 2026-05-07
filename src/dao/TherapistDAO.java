@@ -1,3 +1,4 @@
+
 package dao;
 
 import database.DBConnection;
@@ -6,7 +7,6 @@ import model.Therapist;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 
 public class TherapistDAO {
 
@@ -62,13 +62,9 @@ public class TherapistDAO {
         return false;
     }
 
-    // GET ALL THERAPISTS
+    // VIEW ALL THERAPISTS
 
-    public ArrayList<Therapist>
-    getAllTherapists() {
-
-        ArrayList<Therapist> list =
-                new ArrayList<>();
+    public void viewTherapists() {
 
         try {
 
@@ -84,45 +80,130 @@ public class TherapistDAO {
             ResultSet rs =
                     pst.executeQuery();
 
+            System.out.println(
+                    "\n===== THERAPIST LIST =====\n"
+            );
+
             while (rs.next()) {
 
-                Therapist t =
-                        new Therapist();
+                System.out.println(
 
-                t.setId(
-                        rs.getInt("id")
-                );
+                        "ID: " +
+                        rs.getInt("id") +
 
-                t.setName(
-                        rs.getString("name")
-                );
+                        " | Name: " +
+                        rs.getString("name") +
 
-                t.setSpecialization(
+                        " | Specialization: " +
                         rs.getString(
                                 "specialization"
-                        )
-                );
+                        ) +
 
-                t.setExperience(
+                        " | Experience: " +
                         rs.getInt(
                                 "experience"
-                        )
-                );
+                        ) + " Years" +
 
-                t.setContact(
+                        " | Contact: " +
                         rs.getString(
                                 "contact"
                         )
                 );
-
-                list.add(t);
             }
 
         } catch (Exception e) {
 
             e.printStackTrace();
         }
+    }
 
-        return list;
+    // DELETE THERAPIST
+
+    public boolean deleteTherapist(
+            int id
+    ) {
+
+        try {
+
+            Connection con =
+                    DBConnection.getConnection();
+
+            String query =
+                    "DELETE FROM therapists WHERE id=?";
+
+            PreparedStatement pst =
+                    con.prepareStatement(query);
+
+            pst.setInt(1, id);
+
+            int rows =
+                    pst.executeUpdate();
+
+            return rows > 0;
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    // UPDATE THERAPIST
+
+    public boolean updateTherapist(
+            Therapist therapist
+    ) {
+
+        try {
+
+            Connection con =
+                    DBConnection.getConnection();
+
+            String query =
+                    "UPDATE therapists SET " +
+                    "name=?,specialization=?," +
+                    "experience=?,contact=? " +
+                    "WHERE id=?";
+
+            PreparedStatement pst =
+                    con.prepareStatement(query);
+
+            pst.setString(
+                    1,
+                    therapist.getName()
+            );
+
+            pst.setString(
+                    2,
+                    therapist.getSpecialization()
+            );
+
+            pst.setInt(
+                    3,
+                    therapist.getExperience()
+            );
+
+            pst.setString(
+                    4,
+                    therapist.getContact()
+            );
+
+            pst.setInt(
+                    5,
+                    therapist.getId()
+            );
+
+            int rows =
+                    pst.executeUpdate();
+
+            return rows > 0;
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
+        return false;
     }
 }

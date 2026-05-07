@@ -1,10 +1,10 @@
 package dao;
 
+import database.DBConnection;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
-import database.DBConnection;
 
 public class UserDAO {
 
@@ -19,8 +19,7 @@ public class UserDAO {
                     DBConnection.getConnection();
 
             String query =
-                    "SELECT * FROM users " +
-                    "WHERE username=? AND password=?";
+                    "SELECT * FROM users WHERE username=? AND password=?";
 
             PreparedStatement pst =
                     con.prepareStatement(query);

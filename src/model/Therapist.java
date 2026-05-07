@@ -3,13 +3,9 @@ package model;
 public class Therapist {
 
     private int id;
-
     private String name;
-
     private String specialization;
-
     private int experience;
-
     private String contact;
 
     public Therapist() {
@@ -23,15 +19,9 @@ public class Therapist {
     ) {
 
         this.name = name;
-
-        this.specialization =
-                specialization;
-
-        this.experience =
-                experience;
-
-        this.contact =
-                contact;
+        this.specialization = specialization;
+        this.experience = experience;
+        this.contact = contact;
     }
 
     public int getId() {
@@ -46,10 +36,7 @@ public class Therapist {
         return name;
     }
 
-    public void setName(
-            String name
-    ) {
-
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -57,34 +44,23 @@ public class Therapist {
         return specialization;
     }
 
-    public void setSpecialization(
-            String specialization
-    ) {
-
-        this.specialization =
-                specialization;
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
     }
 
     public int getExperience() {
         return experience;
     }
 
-    public void setExperience(
-            int experience
-    ) {
-
-        this.experience =
-                experience;
+    public void setExperience(int experience) {
+        this.experience = experience;
     }
 
     public String getContact() {
         return contact;
     }
 
-    public void setContact(
-            String contact
-    ) {
-
+    public void setContact(String contact) {
         this.contact = contact;
     }
 }

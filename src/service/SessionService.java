@@ -12,6 +12,13 @@ public class SessionService {
             Session session
     ) {
 
-        return dao.addSession(session);
+        return dao.addSession(
+                session
+        );
+    }
+
+    public void viewSessions() {
+
+        dao.viewSessions();
     }
 }

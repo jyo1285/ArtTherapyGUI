@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class DBConnection {
 
     private static final String URL =
-            "jdbc:mysql://localhost:3306/arttherapygui";
+            "jdbc:mysql://localhost:3306/arttherapyconsole";
 
     private static final String USER =
             "root";
@@ -34,5 +34,5 @@ public class DBConnection {
         }
 
         return null;
-    }
+}
 }

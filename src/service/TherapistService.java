@@ -12,6 +12,13 @@ public class TherapistService {
             Therapist therapist
     ) {
 
-        return dao.addTherapist(therapist);
+        return dao.addTherapist(
+                therapist
+        );
+    }
+
+    public void viewTherapists() {
+
+        dao.viewTherapists();
     }
 }
